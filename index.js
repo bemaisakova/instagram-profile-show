@@ -5,8 +5,8 @@ import { loginValidation } from './validations.js';
 import handleValidationsErrors from './utils/handleValidationsErrors.js';
 import * as UserController from './controllers/UserController.js'
 
-
-mongoose.connect('mongodb+srv://instaclon:Z3U56dRaLyr9eGVl@cluster0.rir1jrf.mongodb.net/blog?retryWrites=true&w=majority')
+// mongodb+srv://instaclon:Z3U56dRaLyr9eGVl@cluster0.rir1jrf.mongodb.net/blog?retryWrites=true&w=majority
+mongoose.connect(process.env.MONGODB_URI)
 .then( () => {console.log("DB connected")})
 .catch( (err) => {console.log("DB errror", err)})
 
@@ -26,7 +26,7 @@ app.delete('/posts/:id', UserController.remove)
 
 
 
-app.listen(4444, (err)=> {
+app.listen(process.env.POST || 4444, (err)=> {
   if(err){
     return console.log(err)
   }
