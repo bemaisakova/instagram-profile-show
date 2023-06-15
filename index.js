@@ -6,7 +6,9 @@ import handleValidationsErrors from './utils/handleValidationsErrors.js';
 import * as UserController from './controllers/UserController.js'
 
 // mongodb+srv://instaclon:Z3U56dRaLyr9eGVl@cluster0.rir1jrf.mongodb.net/blog?retryWrites=true&w=majority
-mongoose.connect(process.env.MONGODB_URI)
+// mongoose.connect(process.env.MONGODB_URI)
+// rxx2obztvGh6fmY2
+mongoose.connect('mongodb+srv://isakovabem995:rxx2obztvGh6fmY2@cluster0.syjk4om.mongodb.net/blog?retryWrites=true&w=majority')
 .then( () => {console.log("DB connected")})
 .catch( (err) => {console.log("DB errror", err)})
 
